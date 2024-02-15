@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser')
 const errorHandler = require('./middleware/error');
 const fileupload = require('express-fileupload');
+const cors = require('cors');
+const bodyparser = require('body-parser')
 
 const connectDB = require('./config/connectDB')
 
@@ -26,6 +28,12 @@ app.use(express.json());
 app.use(fileupload({
     debug: true
 }));
+
+app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyparser.json())
+
+// Enable CORS
+app.use(cors());
 
 app.use(cookieParser({
     debug: true
