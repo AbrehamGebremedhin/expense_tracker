@@ -11,6 +11,10 @@ const SignUp = () => {
   const [phonenumber, setPhonenumber] = useState("");
   const [accept, setAccept] = useState(false);
 
+  const setCookie = (name, value) => {
+    document.cookie = `${name}=${value};path=/`;
+  };
+
   const registerUser = async (event) => {
     event.preventDefault();
     const data = {
@@ -27,7 +31,7 @@ const SignUp = () => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(data)
-        }).then(res => res.json()).then(d => console.log(d))
+        }).then(res => res.json()).then(d => setCookie('token',d.token))
       }
     }
 }
@@ -62,7 +66,7 @@ const SignUp = () => {
           }} /><br/>
           <input type="checkbox" onClick={() => {setAccept(true) }}/>By signing up, you agree to our Terms of Service and Privacy Policy.<br/>
           <button className='w-96 h-8 text-center rounded-lg mt-5 bg-blue-950 text-black' onClick={registerUser}>Sign Up</button>
-          <p>Already have an account?<Link className=' text-sky-500 hover:underline'>Log In</Link></p>
+          <p>Already have an account?<Link to={'/'} className=' text-sky-500 hover:underline'>Log In</Link></p>
         </form>
       </div>
       <img className='flex flex-row-reverse mr-12' src={image} alt='Logo' style={{ width: '400px', height: '400px' }}/>
