@@ -6,6 +6,14 @@ body {
     background-color: #333333;
 }
 
+.parent-div {
+    width: 200px; /* Or any other width */
+  }
+  
+  .child-div {
+    margin: 10% 0; /* 10% of the parent div's width for top and bottom margin, 0 for left and right */
+  }
+
 @layer components {
     .sidebar-icon {
         @apply relative flex items-center justify-center

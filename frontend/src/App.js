@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import Home from './pages/Home';
+import Accounts from './pages/Accounts';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Routes>
             <Route path='/SignUp' element={<SignUp />}/>
             <Route path='/' element={<Login />}/>
+            <Route path='/Home' element={<Home />}/>
+            <Route path='/Accounts' element={<Accounts />}/>
           </Routes>
         </Router>
       </QueryClientProvider>

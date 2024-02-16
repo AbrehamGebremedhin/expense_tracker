@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-const LogIn = () => {
+const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
 
     const setCookie = (name, value) => {
         document.cookie = `${name}=${value};path=/`;
@@ -23,7 +24,7 @@ const LogIn = () => {
               },
               body: JSON.stringify(data)
             }).then(res => res.json()).then(d => setCookie('token',d.token))
-
+            navigate('/Home')
         }
 
   return (
@@ -52,4 +53,4 @@ const LogIn = () => {
   )
 }
 
-export default LogIn
+export default Login

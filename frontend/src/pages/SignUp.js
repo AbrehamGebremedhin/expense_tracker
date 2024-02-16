@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import image from '../images/main.png'
 //import Axios from 'axios';
 
@@ -10,6 +10,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [accept, setAccept] = useState(false);
+  const navigate = useNavigate()
 
   const setCookie = (name, value) => {
     document.cookie = `${name}=${value};path=/`;
@@ -32,6 +33,7 @@ const SignUp = () => {
           },
           body: JSON.stringify(data)
         }).then(res => res.json()).then(d => setCookie('token',d.token))
+        navigate('/Home')
       }
     }
 }
