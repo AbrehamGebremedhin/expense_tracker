@@ -6,6 +6,8 @@ import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Accounts from './pages/Accounts';
+import NewAccount from './pages/NewAccount';
+import EditAccount from './pages/EditAccount';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
             <Route path='/' element={<Login />}/>
             <Route path='/Home' element={<Home />}/>
             <Route path='/Accounts' element={<Accounts />}/>
+            <Route path='/NewAccount' element={<NewAccount />}/>
+            <Route path='/EditAccount/:id' element={<EditAccount />}/>
           </Routes>
         </Router>
       </QueryClientProvider>
