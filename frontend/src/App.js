@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import Accounts from './pages/Accounts';
 import NewAccount from './pages/NewAccount';
 import EditAccount from './pages/EditAccount';
+import Categories from './pages/Categories';
+import NewCategory from './pages/NewCategory';
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
             <Route path='/Accounts' element={<Accounts />}/>
             <Route path='/NewAccount' element={<NewAccount />}/>
             <Route path='/EditAccount/:id' element={<EditAccount />}/>
+            <Route path='/Categories' element={<Categories />}/>
+            <Route path='/NewCategory' element={<NewCategory />}/>
           </Routes>
         </Router>
       </QueryClientProvider>
