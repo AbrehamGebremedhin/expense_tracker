@@ -28,7 +28,7 @@ const Sidebar = () => {
         <Link to={'/Accounts'}><SidebarIcon icon={<CiBank size={28}/>} text={'Financial Accounts'} /></Link>
         <Link><SidebarIcon icon={<GoGoal size={28}/>} text={'Goals'}/></Link>
         <Link to={'/Categories'}><SidebarIcon icon={<BiCategory size={28}/>} text={'Manage Categories'}/></Link>
-        <Link><SidebarIcon icon={<MdTableRows size={28}/>} text={'Manage Budget'}/></Link>
+        <Link to={'/Budget'}><SidebarIcon icon={<MdTableRows size={28}/>} text={'Manage Budget'}/></Link>
         <Link><SidebarIcon icon={<BsGearFill size={28}/>} text={'Settings'}/></Link>
         <button onClick={logoutUser}><SidebarIcon icon={<IoIosLogOut size={28}/>} text={'Logout'}/></button>
     </div>

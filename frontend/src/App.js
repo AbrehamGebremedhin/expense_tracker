@@ -10,6 +10,8 @@ import NewAccount from './pages/NewAccount';
 import EditAccount from './pages/EditAccount';
 import Categories from './pages/Categories';
 import NewCategory from './pages/NewCategory';
+import Budget from './pages/Budget';
+import NewBudget from './pages/NewBudget';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
             <Route path='/EditAccount/:id' element={<EditAccount />}/>
             <Route path='/Categories' element={<Categories />}/>
             <Route path='/NewCategory' element={<NewCategory />}/>
+            <Route path='/Budget' element={<Budget />}/>
+            <Route path='/NewBudget' element={<NewBudget />}/>
           </Routes>
         </Router>
       </QueryClientProvider>
