@@ -73,7 +73,7 @@ const NewBudget = () => {
         <div>
             <Sidebar />
             <div className='mx-32 my-6'>
-                <h2 className='text-2xl font-bold tracking-tight text-white'>Add new Account</h2>
+                <h2 className='text-2xl font-bold tracking-tight text-white'>Add new Budget</h2>
                 <br />
                 {error && <p className="text-red-500">Error: {error}</p>}
                 <form>

@@ -74,7 +74,7 @@ const EditAccount = () => {
     <div>
         <Sidebar/>
         <div className='mx-32 my-6'>
-            <h2 className="text-2xl font-bold tracking-tight text-white">Add new Account</h2><br/>
+            <h2 className="text-2xl font-bold tracking-tight text-white">Edit Account</h2><br/>
             <form>
           <label>Account Name</label><br/>
           <input type="text" placeholder={`${accounts.name}`} className='w-96 h-8 text-center rounded-lg mt-5 bg-gray-300 text-black' onChange={(e) => {

@@ -13,6 +13,12 @@ import NewCategory from './pages/NewCategory';
 import Budget from './pages/Budget';
 import NewBudget from './pages/NewBudget';
 import EditBudget from './pages/EditBudget';
+import Goal from './pages/Goal';
+import NewGoal from './pages/NewGoal';
+import EditGoal from './pages/EditGoal';
+import Expense from './pages/Expense';
+import NewTransaction from './pages/NewTransaction';
+import EditTransaction from './pages/EditTransaction';
 
 
 function App() {
@@ -40,6 +46,12 @@ function App() {
             <Route path='/Budget' element={<Budget />}/>
             <Route path='/NewBudget' element={<NewBudget />}/>
             <Route path='/EditBudget/:id' element={<EditBudget/>}/>
+            <Route path='/Goal' element={<Goal/>}/>
+            <Route path='/NewGoal' element={<NewGoal/>}/>
+            <Route path='/EditGoal/:id' element={<EditGoal/>}/>
+            <Route path='/Expense' element={<Expense/>}/>
+            <Route path='/NewTransaction' element={<NewTransaction/>}/>
+            <Route path='/EditTransaction/:id' element={<EditTransaction/>}/>
           </Routes>
         </Router>
       </QueryClientProvider>

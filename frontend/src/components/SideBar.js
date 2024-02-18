@@ -24,9 +24,9 @@ const Sidebar = () => {
     <div className="fixed top-0 m-0 h-screen w-16 first-letter
                     flex flex-col bg-gray-900 text-white shadow-lg">
         <Link to={'/Home'}><SidebarIcon icon={<CiMoneyBill size={28}/>} text={'Home'}/></Link>
-        <Link><SidebarIcon icon={<GrTransaction size={28}/>} text={'Manage Transaction'}/></Link>
+        <Link to={'/Expense'}><SidebarIcon icon={<GrTransaction size={28}/>} text={'Manage Transaction'}/></Link>
         <Link to={'/Accounts'}><SidebarIcon icon={<CiBank size={28}/>} text={'Financial Accounts'} /></Link>
-        <Link><SidebarIcon icon={<GoGoal size={28}/>} text={'Goals'}/></Link>
+        <Link to={'/Goal'}><SidebarIcon icon={<GoGoal size={28}/>} text={'Goals'}/></Link>
         <Link to={'/Categories'}><SidebarIcon icon={<BiCategory size={28}/>} text={'Manage Categories'}/></Link>
         <Link to={'/Budget'}><SidebarIcon icon={<MdTableRows size={28}/>} text={'Manage Budget'}/></Link>
         <Link><SidebarIcon icon={<BsGearFill size={28}/>} text={'Settings'}/></Link>

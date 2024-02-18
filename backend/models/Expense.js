@@ -52,7 +52,33 @@ ExpenseSchema.pre('save', async function (next) {
 
         if (account) {
             // Increment the spent field of the budget document
-            account.balance -= this.amount;
+            this.type  === 'Expenditure' ? account.balance -= this.amount : account.balance += this.amount;
+            await account.save();
+        }
+
+        next();
+    } catch (error) {
+        next(error);
+    }
+});
+
+ExpenseSchema.pre('findOneAndUpdate', async function (next) {
+    try {
+        // Find the budget document for the same category and user
+        const budget = await Budget.findOne({ category: this.category, user: this.user });
+        const account = await Account.findOne({ _id: this.paymentMethod, user: this.user });
+
+        const currentDate = new Date();
+
+        if (budget && currentDate <= budget.endDate) {
+            // Increment the spent field of the budget document
+            budget.spent += this.amount;
+            await budget.save();
+        }
+
+        if (account) {
+            // Increment the spent field of the budget document
+            this.type  === 'Expenditure' ? account.balance -= this.amount : account.balance += this.amount;
             await account.save();
         }
 

@@ -17,10 +17,13 @@ const { protect } = require('../middleware/auth');
 router
   .route('/')
   .get(
-    advancedResults(Expense, {
+    advancedResults(Expense, [{
         path: 'paymentMethod',
         select: 'name'
-    }),
+    },{
+      path: 'category',
+      select: 'name'
+    }]),
     getExpenses
   )
   .post(protect, addExpense);
