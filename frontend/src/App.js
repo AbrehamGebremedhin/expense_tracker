@@ -12,6 +12,7 @@ import Categories from './pages/Categories';
 import NewCategory from './pages/NewCategory';
 import Budget from './pages/Budget';
 import NewBudget from './pages/NewBudget';
+import EditBudget from './pages/EditBudget';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path='/NewCategory' element={<NewCategory />}/>
             <Route path='/Budget' element={<Budget />}/>
             <Route path='/NewBudget' element={<NewBudget />}/>
+            <Route path='/EditBudget/:id' element={<EditBudget/>}/>
           </Routes>
         </Router>
       </QueryClientProvider>

@@ -63,12 +63,12 @@ const Budget = () => {
                         <div key={budget._id}>
                             <div className="flex justify-between mb-1">
                                 <span className="text-base font-medium text-blue-700 dark:text-white">{budget.category.name}</span>
-                                <span className="text-sm font-medium text-blue-700 dark:text-white">{(budget.spent/budget.limit)/100}</span>
+                                <span className="text-sm font-medium text-blue-700 dark:text-white">{budget.spent}</span>
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                <div className="bg-blue-600 h-2.5 rounded-full" style={{width: (budget.spent/budget.limit)/100}}></div>
+                                <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: `${(budget.spent / budget.limit) * 100}%` }}></div>
                             </div>
-                            <button type="button" className="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-3 py-1.25 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</button>
+                            <Link to={`/EditBudget/${budget._id}`} state={budget._id}  type="button" className="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-3 py-1.25 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</Link>
                             <button type="button" className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-3 py-1.25 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" onClick={() => handleDelete(budget._id)}>Delete</button>
                             <br></br><br></br>
                         </div>
